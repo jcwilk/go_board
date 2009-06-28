@@ -1,0 +1,15 @@
+unsure how to keep track of capturables... ideally they would be an instance variable, that way each(f{}.bind(this)) would be able to access them... probably store them in an instance array, and iterate over each of the 4 starting points surrounding a movement point, after each iteration add the captures to a master array in the function and clear the instance array. the visited instance array should also be cleared, as visited empty spots would not be noticed by subsequent iterations... that or empty spots should not be marked as visited, which would be acceptable from an efficiency standpoint since when one was found it would end the iteration... that is unless it takes too much time to constantly check if something is empty
+
+for attacking player white:
+if visited
+	return true
+if white
+	add to capturableArray
+	return intersection of each adjacent spot
+if black or outside
+	add to visited
+	return true
+if blank
+	add to visited
+	return false
+end
