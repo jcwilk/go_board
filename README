@@ -1,0 +1,1 @@
+A javascript implementation of a go game recorder. You can use it to output the game in SGF format and then save it to a file for later review.
