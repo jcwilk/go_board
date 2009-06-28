@@ -1,0 +1,19 @@
+<html>
+<head>
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="board.js"></script>
+<script type="text/javascript" src="moveController.js"></script>
+<script type="text/javascript" src="game.js"></script>
+<title>Go Board</title></head>
+<body>
+	<script>
+    var controller = new MoveController('controller');
+    //alert(controller.game.adjacentSpots([0,0]));
+    //alert(controller.game.isOnBoard([-1,-1]));
+	</script>
+	<div style='position:absolute; left: 320px; top: 0px'>
+		<a href="javascript:controller.undo();">Undo</a>
+		<a href="javascript: new_window=window.open('','name','height=400,width=500');new_window.document.open('text/plain');new_window.document.write(controller.game.sgf());new_window.document.close();">New window</a>
+	</div>
+</body>
+</html>
