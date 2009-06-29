@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script language="javascript" src="captureCalculator.js"></script>
+    <script language="javascript" src="boardUtilities.js"></script>
+    <script language="javascript" src="prototype.js"></script>
+    <script language="javascript" src="js_app/jsUnitCore.js"></script>
+  </head>
+  <body>
+    <script>
+      var calc;
+
+      function setUp(){
+        var stones = new Hash();
+        stones.set([14,15],1);
+        stones.set([16,15],1);
+        stones.set([15,14],1);
+        stones.set([15,15],0);
+        calc = new CaptureCalculator(stones);
+      }
+
+      function tearDown(){
+        calc = undefined;
+      }
+
+      function testCreationWithStoneMap(){
+        assertEquals("stone lookup works",calc.stones().get([14,15]),1);
+      }
+
+      function testCaptureHelperForBlankTargets(){
+        var result = calc.capturesForMoveHelper([11,11]);
+        assert(isEmptyHash(result));
+      }
+
+      function isEmptyHash(_hash){
+        return (_hash == new Hash());
+      }
+    </script>
+  </body>
+</html>
